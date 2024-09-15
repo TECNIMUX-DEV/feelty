@@ -5,22 +5,6 @@
 ![Static Badge](https://img.shields.io/badge/State-Building-orange?style=for-the-badge)
 <h2 align="right">Your personal library</h2>
 <h4>Biblioteca de libros que has leido y tienen un espacio aquí. :dragon_face:</h4>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## [#feelty](https://github.com/TECNIMUX-DEV/feelty)
 
 

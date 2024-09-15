@@ -8,9 +8,6 @@
 
 ## [#feelty](https://github.com/TECNIMUX-DEV/feelty)
 
-### <a href="https://www.ejemplo.com" target="_blank">Este es un título con <em>énfasis</em> en un enlace</a>
-
-
 
 
 

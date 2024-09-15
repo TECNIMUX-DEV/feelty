@@ -1,5 +1,5 @@
 # feelty
-<h2 align="right"><em> #feelty </em></h2>
+
 ![Your personal library](https://github.com/user-attachments/assets/830b9e77-1c81-49af-8bae-6f0157051e59)
 ![Static Badge](https://img.shields.io/badge/Version-0.0.0-purple?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/State-Building-orange?style=for-the-badge)

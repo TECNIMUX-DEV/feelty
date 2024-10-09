@@ -6,13 +6,13 @@
     <title>Feelty · Your personal library</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon/bookmarks.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- <header>
     <h1>Feelty</h1>
     </header> -->
     <section id="home">
-
         <div class="container-home">
             <img src="/favicon/bookmarks.svg" 
             alt="logo">
@@ -24,8 +24,19 @@
     </div>
     </section>
 
+    <div class="social-media">
+        <ul>
+            <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </div>
+
 <section id="starbooks">
     <h2>Starbooks 🌠🌠🌠</h2>
+    <p>Estos son los libros magicos  tendencia que estan transformando</p>
     <div class="container-star-book">
         <div class="wrapper">
             <div class="container" id="c0">
@@ -175,10 +186,94 @@
         </div>
     </section>
 
+    <section id="reading-tracker">
+        <h1>Progreso de Lectura</h1>
+        <p>Aquí puedes seguir tu progreso de lectura:</p>
+        <div class="libro-lista">
+            <div class="libro">
+                <i class="fas fa-book"></i>
+                <div class="libro-detalles">
+                    <h2>El Alquimista</h2>
+                    <p>Estado: <span class="completo">Completado</span></p>
+                    <div class="grafica">
+                        <div class="porcentaje" style="width: 100%; background-color: #d894ff;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="libro">
+                <i class="fas fa-book"></i>
+                <div class="libro-detalles">
+                    <h2>1984</h2>
+                    <p>Estado: <span class="en-progreso">En progreso</span></p>
+                    <div class="grafica">
+                        <div class="porcentaje" style="width: 60%; background-color: #d894ff;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="libro">
+                <i class="fas fa-book"></i>
+                <div class="libro-detalles">
+                    <h2>La Casa de los Espíritus</h2>
+                    <p>Estado: <span class="pendiente">Pendiente</span></p>
+                    <div class="grafica">
+                        <div class="porcentaje" style="width: 0%; background-color: #d894ff;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="libro">
+                <i class="fas fa-book"></i>
+                <div class="libro-detalles">
+                    <h2>Cien años de soledad</h2>
+                    <p>Estado: <span class="completo">Completado</span></p>
+                    <div class="grafica">
+                        <div class="porcentaje" style="width: 100%; background-color: #d894ff;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="buy-books">
+            <h1>Aliados</h1>
+            <p>Aquí tienes algunas empresas donde puedes comprar libros:</p>
+            <ul class="libro-lista">
+                <li>
+                    <a href="https://www.amazon.com" target="_blank">Amazon</a> - Una de las mayores librerías en línea con una amplia selección de libros.
+                    <button class="comprar-btn"><a href="https://www.amazon.com" target="_blank">Comprar</a></button>
+                </li>
+                <li>
+                    <a href="https://www.casadellibro.com" target="_blank">Casa del Libro</a> - Librería española con una extensa colección de libros en diversos géneros.
+                    <button class="comprar-btn"><a href="https://www.casadellibro.com" target="_blank">Comprar</a></button>
+                </li>
+                <li>
+                    <a href="https://www.fnac.es" target="_blank">Fnac</a> - Tienda de electrónica y libros, con una variedad de títulos disponibles.
+                    <button class="comprar-btn"><a href="https://www.fnac.es" target="_blank">Comprar</a></button>
+                </li>
+                <li>
+                    <a href="https://www.libreriacortes.com" target="_blank">Librería Cortés</a> - Librería en línea con una buena selección de libros en español.
+                    <button class="comprar-btn"><a href="https://www.libreriacortes.com" target="_blank">Comprar</a></button>
+                </li>
+                <li>
+                    <a href="https://www.libreriacapitol.com" target="_blank">Librería Capitol</a> - Especializada en libros de texto y literatura general.
+                    <button class="comprar-btn"><a href="https://www.libreriacapitol.com" target="_blank">Comprar</a></button>
+                </li>
+                <li>
+                    <a href="https://www.libreriakarma.com" target="_blank">Librería Karma</a> - Conocida por su selección de libros de autoayuda y desarrollo personal.
+                    <button class="comprar-btn"><a href="https://www.libreriakarma.com" target="_blank">Comprar</a></button>
+                </li>
+                <li>
+                    <a href="https://www.libreriacatedral.com" target="_blank">Librería Catedral</a> - Ofrece una amplia gama de literatura y títulos académicos.
+                    <button class="comprar-btn"><a href="https://www.libreriacatedral.com" target="_blank">Comprar</a></button>
+                </li>
+            </ul>
+    </section>
+
     <footer>
         <p>&copy; 2024 Feelty</p>
         <img src="/favicon/bookmarks.svg" 
         alt="logo">
+
+        <a href="/html/rules.html"><button>Politicas de Privacidad</button></a>
     </footer>
 </body>
 </html>

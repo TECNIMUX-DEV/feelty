@@ -190,6 +190,15 @@ rgba(255, 182, 193, 0.8)  /* Rosa claro (repetido para suavidad) */
   margin: 10px 0; /* Espacio entre los elementos de la lista */
   transition: all 0.1s;
 
+  &:last-child {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+  }
+
   :hover {
     opacity: 1;
   }
@@ -231,7 +240,6 @@ rgba(255, 182, 193, 0.8)  /* Rosa claro (repetido para suavidad) */
             flex-wrap: wrap;
             margin: 2rem auto;
             padding: 3rem .5rem;
-            margin: 2rem auto;
             border-radius: 3px;
             /* max-width: 500px; */
             background-color: #222222;
@@ -483,10 +491,12 @@ p {
     overflow: hidden;
 
     & h2 {
-        font-size: 3rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 4rem;
         font-weight: bold;
         text-align: center;
-        margin: 2rem;
+        margin: 0 2rem 2rem 2rem;
+        color: #8926b5;
     }
 
     & p {

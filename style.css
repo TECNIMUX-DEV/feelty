@@ -1100,6 +1100,7 @@ footer {
   flex-direction: column;
   gap: 20px;
   text-align: center;
+  margin-top: 1rem;
   padding: 20px 0;
   font-size: 0.9rem;
   border-top: 1px solid #444; /* Borde superior */

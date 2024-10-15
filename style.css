@@ -103,11 +103,12 @@ rgba(255, 182, 193, 0.8)  /* Rosa claro (repetido para suavidad) */
   right: 20px;
   font-size: 24px;
   cursor: pointer;
-  color: #000;
+  color: #fff;
   margin: 20px;
   padding: 4px;
+  border: 2px solid #fff;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 /* Cambia de color al pasar el ratón */
@@ -175,6 +176,7 @@ input {
 }
 
 #home {
+  position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -247,6 +249,10 @@ input {
             width: 150px;
             top: -250px;
             left: 0;
+
+            @media (max-width: 1200px) {
+              top: -170px;
+            }
         }
  }
 }
@@ -341,79 +347,81 @@ input {
             border-radius: 3px;
             /* max-width: 500px; */
             background-color: #141414;
+            
 
-        & h2:nth-child(1) {
-            width: 100%;
-            text-align: center;
-            color: #8926b5;
-            margin-bottom: 20px;
-            font-size: 3rem;
-            padding: 1rem 1rem 0 1rem;
-        }
 
-        & .item-book {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            /* height: 500px; */
-            /* height: 600px; */
-            min-height: 550px;
-            max-width: 350px;
-            width: 100%;
-            /* max-width: 500px; */
-            margin: 0 auto;
-            margin-top: 2rem;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 20px #8a8a8a3f;
-            color: #000;
-            background-color: #fff;
-            transition: all 0.3s ease-in-out;
-            transform: scale(0.8);
-
-            & h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-                color: #000;
-                text-shadow: 0 0 10px #fff;
+            & h2:nth-child(1) {
+                width: 100%;
+                text-align: center;
+                color: #8926b5;
+                margin-bottom: 20px;
+                font-size: 3rem;
+                padding: 1rem 1rem 0 1rem;
             }
 
-            & p {
-                font-size: 1.2rem;
-                color: #000;
-                text-shadow: 0 0 10px #fff;
-                text-align: start;
-                text-wrap: pretty;
-            }
-
-            & button {
-                font-size: 1.2rem;
-                font-weight: lighter;
-                padding: 0.5rem 1rem;
-                background-color: #8926b5;
-                color: #fff;
-                border: none;
+            & .item-book {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                /* height: 500px; */
+                /* height: 600px; */
+                min-height: 550px;
+                max-width: 350px;
+                width: 100%;
+                /* max-width: 500px; */
+                margin: 0 auto;
+                margin-top: 2rem;
+                padding: 1rem;
                 border-radius: 5px;
-                cursor: pointer;
+                box-shadow: 0 0 20px #8a8a8a3f;
+                color: #000;
+                background-color: #fff;
                 transition: all 0.3s ease-in-out;
-                margin-top: 1rem;
+                transform: scale(0.8);
 
-                &:hover {
-                    opacity: 0.5;
-                    box-shadow: 0 0 10px #000;
+                & h2 {
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                    color: #000;
+                    text-shadow: 0 0 10px #fff;
                 }
-            }
 
-            &:hover .caratula {
-              z-index: 1;
-                transform: scale(1.05) translateY(40px);
-            }
+                & p {
+                    font-size: 1.2rem;
+                    color: #000;
+                    text-shadow: 0 0 10px #fff;
+                    text-align: justify;
+                    text-wrap: pretty;
+                }
 
-            &:hover h2 {
-              opacity: 0.3;
-          }
+                & button {
+                    font-size: 1.2rem;
+                    font-weight: lighter;
+                    padding: 0.5rem 1rem;
+                    background-color: #8926b5;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    margin-top: 1rem;
+
+                    &:hover {
+                        opacity: 0.5;
+                        box-shadow: 0 0 10px #000;
+                    }
+                }
+
+                &:hover .caratula {
+                  z-index: 1;
+                    transform: scale(1.05) translateY(40px);
+                }
+
+                &:hover h2 {
+                  opacity: 0.3;
+              }
             
             &:hover {
                 transform: scale(0.9);
@@ -440,7 +448,11 @@ input {
                 }
 
             }
-        }
+          }
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
+      }
 
         & .add-book {
             background-color: #8926b5;
@@ -486,9 +498,9 @@ input {
             &:hover p {
                 opacity: 0;
             }
-        }
-    }
-}
+      }
+  }
+
 
 #reading-tracker {
   max-width: 800px;
@@ -612,7 +624,7 @@ p {
     } 
     .container-star-book {
         position: relative;
-        height: calc(50vh + 100px);
+        height: calc(50vh + 150px);
         width: 100%;
         display: flex;
         place-content: center;

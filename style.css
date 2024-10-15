@@ -37,7 +37,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #222222; /* Color del pulgar al pasar el mouse */
+  background-color: #141414; /* Color del pulgar al pasar el mouse */
 }
 
 /* header {
@@ -96,12 +96,18 @@ rgba(255, 182, 193, 0.8)  /* Rosa claro (repetido para suavidad) */
 /* Estilo del ícono de usuario */
 #loginBtn {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 20px;
   right: 20px;
   font-size: 24px;
   cursor: pointer;
-  color: #fff;
+  color: #000;
   margin: 20px;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 /* Cambia de color al pasar el ratón */
@@ -334,14 +340,14 @@ input {
             padding: 3rem .5rem;
             border-radius: 3px;
             /* max-width: 500px; */
-            background-color: #222222;
+            background-color: #141414;
 
         & h2:nth-child(1) {
             width: 100%;
             text-align: center;
-              color: #8926b5;
-              margin-bottom: 20px;
-              font-size: 2.2em;
+            color: #8926b5;
+            margin-bottom: 20px;
+            font-size: 3rem;
             padding: 1rem 1rem 0 1rem;
         }
 
@@ -384,9 +390,10 @@ input {
 
             & button {
                 font-size: 1.2rem;
+                font-weight: lighter;
                 padding: 0.5rem 1rem;
                 background-color: #8926b5;
-                color: #000;
+                color: #fff;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
@@ -579,7 +586,7 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0 auto;
+    margin: -2rem auto;
     overflow: hidden;
 
     & h2 {
@@ -592,8 +599,10 @@ p {
     }
 
     & p {
-      padding: 1rem;
+      font-size: 1.3rem;
       font-weight: 500;
+      padding: 1rem;
+      text-shadow: 5px 5px 10px #000;
       text-align: center;
     }
 
@@ -848,7 +857,7 @@ p {
 
 #buy-books {
   max-width: 800px;
-  margin: auto;
+  margin: 2rem auto;
   padding: 20px;
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -916,7 +925,7 @@ p {
 }
 
 
-footer {
+/* footer {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -935,5 +944,187 @@ footer {
       &:hover {
         text-decoration: none;
     }
+  }
+} */
+
+footer {
+  z-index: 2;
+  position: relative;
+  background-color: #141414;
+  color: #ffffff; /* Texto en blanco */
+  padding: 40px 0; /* Espaciado vertical */
+  font-family: Arial, sans-serif;
+
+  & img {
+    z-index: -1;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    height: auto;
+    width: 170px;
+    filter: contrast(0.2);
+    -webkit-user-drag: none;
+
+    @media (max-width: 1200px) {
+      opacity: 0.2;
+  
+      }
+  }
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alineación superior */
+  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 30px; /* Espacio entre secciones */
+}
+
+.footer-info {
+  flex: 1;
+  max-width: 300px; /* Limitar ancho */
+}
+
+.footer-info h4 {
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Tamaño de fuente mayor */
+  font-weight: bold; /* Negrita */
+  border-bottom: 2px solid #8926b5; /* Línea inferior */
+  padding-bottom: 5px; /* Espacio debajo del título */
+}
+
+.footer-info p {
+  font-size: 1rem; /* Tamaño de fuente para el párrafo */
+  margin: 0;
+}
+
+.footer-links {
+  flex: 1;
+  max-width: 300px; /* Limitar ancho */
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Tamaño de fuente mayor */
+  font-weight: bold; /* Negrita */
+  border-bottom: 2px solid #8926b5; /* Línea inferior */
+  padding-bottom: 5px; /* Espacio debajo del título */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Columna para mayor espacio */
+  gap: 10px; /* Espacio entre enlaces */
+}
+
+.footer-links ul li {
+  font-size: 1rem;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #8926b5; /* Color morado */
+  transition: color 0.3s;
+  padding: 5px; /* Espacio alrededor del enlace */
+  border-radius: 5px; /* Esquinas redondeadas */
+  display: inline-block; /* Permitir padding y margen */
+}
+
+.footer-links ul li a:hover {
+  color: #ffffff; /* Cambio de color al pasar el mouse */
+  background-color: rgba(137, 38, 181, 0.2); /* Fondo suave al hover */
+}
+
+.footer-subscription {
+  flex: 1;
+  max-width: 300px; /* Limitar ancho */
+}
+
+.footer-subscription h4 {
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Tamaño de fuente mayor */
+  font-weight: bold; /* Negrita */
+  border-bottom: 2px solid #8926b5; /* Línea inferior */
+  padding-bottom: 5px; /* Espacio debajo del título */
+}
+
+.footer-subscription form {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-subscription input {
+  padding: 10px;
+  border: 1px solid #8926b5; /* Borde morado */
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%; /* Ancho completo */
+  color: #222; /* Color del texto en el campo */
+  outline: none; /* Sin borde al enfocar */
+  transition: border-color 0.3s; /* Transición suave */
+}
+
+.footer-subscription input:focus {
+  border-color: #ffffff; /* Cambiar borde al enfocar */
+}
+
+.footer-subscription button {
+  margin: auto;
+  padding: 17px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8926b5; /* Fondo del botón */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-subscription button:hover {
+  background-color: #6f1d8f; /* Color más oscuro al pasar el mouse */
+}
+
+.subscription-info {
+  font-size: 0.9rem;
+  margin-top: 10px; /* Espacio sobre el texto de información */
+  color: #cccccc; /* Color claro para el texto */
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid #444; /* Borde superior */
+  color: #cccccc; /* Color claro para el texto */
+
+  & button {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline 1px solid #8926b5;
+    cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+    }
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-subscription form {
+    justify-content: center;
   }
 }

@@ -590,6 +590,105 @@ p {
   color: #dc3545;
 }
 
+#stories {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to bottom, #d894ff 0%, #141414 100%); */
+    background-image: linear-gradient(80deg, #e657b0 0, #d34aae 16.67%, #bb38aa 33.33%, #9d1ea1 50%, #7c0099 66.67%, #5c0094 83.33%, #370093 100%);
+    /* padding: 5rem; */
+
+    &::before {
+      content: "100%";
+      z-index: 10;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: .5rem;
+      font-weight: bold;
+      color: #f00;
+      border-radius: 5px;
+      padding: 5px 10px;
+      z-index: 20;
+    }
+
+    &::after {
+      content: "LIVE";
+      z-index: 10;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 5rem;
+      color: #fff;
+      border-radius: 5px;
+      background-color: #0e0e0e;
+      padding: 5px 10px;
+    }
+
+    & .slider-stories {
+    position: relative;
+    height: 95vh;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /* border-radius: 15px; */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    /* clip-path: polygon(20% 0%, 100% 1%, 100% 75%, 69% 75%, 69% 100%, 0 100%, 0% 100%, 0 0); */
+    background-color: #f0f0f0;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+  }
+
+    & .stories-wrapper {
+      display: flex;
+      height: 100%;
+      width: 400%;
+      transition: transform 0.7s ease-in-out;
+      animation: slide 16s infinite;
+    }
+
+    & .container-stories {
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+
+    & .item {
+      height: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+}
+@keyframes slide {
+  0%, 20% {
+    transform: translateX(0%);
+  }
+  25%, 45% {
+    transform: translateX(-25%);
+  }
+  50%, 70% {
+    transform: translateX(-50%);
+  }
+  75%, 95% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 #starbooks {
     position: relative;
     height: auto;

@@ -1,3 +1,26 @@
+const $$ = (id) => document.getElementById(id);
+const $$$ = (e) => document.querySelectorAll(e);
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Menu
+  const btnMenu = $$('btn-menu');
+  const menu = $$('menu');
+
+  btnMenu.addEventListener('click', () => {
+  menu.classList.toggle('display-block');
+  document.body.style.overflow = 'hidden';
+  });
+
+  $$$('.item-menu').forEach(item => {
+    item.addEventListener('click', () => {
+        menu.classList.remove('display-block');
+        document.body.style.overflow = 'auto';
+    })
+  })
+});
+
+
+
 // Obtener los elementos
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.getElementById("loginModal");

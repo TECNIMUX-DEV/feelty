@@ -197,7 +197,7 @@ input {
     }
 
     & h3 {
-        font-size: 3rem;
+        font-size: 2rem;
         color: var(--white);
         filter: contrast(0.5);
     }
@@ -225,17 +225,21 @@ input {
     & button {
         font-size: 1.5rem;
         padding: 1rem 2rem;
-        background-color: #fff;
-        color: #000;
+        background-color: var(--black);
+        backdrop-filter: blur(15px);
+        color: var(--white);
         border: none;
         border-radius: 5px;
         cursor: pointer;
         margin: 0 0 0 2rem;
+        opacity: 0.5;
+        box-shadow: 0 0 10px #000;
         transition: all 0.3s ease-in-out;
 
         &:hover {
-            opacity: 0.5;
-            box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #00000067;
+          background-color: var(--last-color);
+          opacity: 0.9;
         }
     }
 
@@ -268,20 +272,23 @@ input {
     width: 50px; /* Ancho del apartado para ajustar al tamaño del ícono */
     position: sticky; /* Cambiar a sticky */
     top: 160px; /* Distancia desde la parte superior de la pantalla */
-    right: 20px; /* Pegado a la derecha */
-    margin: 1rem;
+    left: 0; /* Pegado a la derecha */
+    
     background: #8926b5; /* Color sólido */
     padding: 10px; /* Espaciado interno */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
     color: white;
     text-align: center;
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    z-index: 100; /* Asegura que esté encima de otros elementos */
     opacity: 0.5;
+    transform: rotate(-90deg) translate(0 , -55%);
+    border-bottom: 1px dashed #adadad;
     transition: all 0.3s;
 
     &:hover {
       opacity: 0.8;
+      transform: rotate(0deg) translate(0 );
     }
 
 }
@@ -336,12 +343,13 @@ input {
     } */
     
         & .feelty {
-            z-index: 1;
+            z-index: 0;
             position: absolute;
             top: 0;
             left: 5px;
             height: auto;
-            width: 20%;           
+            width: 20%;  
+            filter: contrast(.8);         
         }
 
         & .container-books {
@@ -350,7 +358,7 @@ input {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: .5rem;
             flex-wrap: wrap;
             margin: 2rem auto;
             padding: 3rem .5rem;
@@ -368,17 +376,36 @@ input {
                 padding: 5rem 1rem 0 1rem;
             }
 
+            & h4 {
+              width: 100%;
+              text-align: start;
+              text-shadow: 0 0 25px #000;
+              padding: .3rem;
+            }
+
+            &:last-child p {
+              width: 100%;
+              color: rgb(145, 145, 145);
+              text-align: start;
+              text-shadow: 0 0 25px #000;
+              padding: .3rem;
+            }
+
             & .item-book {
                 position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                height: 652px;
+                /* height: 652px;
                 max-height: 652px;
-                max-width: 350px;
+                max-width: 350px; */
+                height: 352px;
+                max-height: 352px;
+                max-width: 180px;
+                width: 180px;
                 width: 100%;
-                margin: 0 auto;
+                margin: 1rem auto;
                 border-radius: 5px;
                 color: #000;
                 background-color: #fff;
@@ -386,7 +413,7 @@ input {
                 border: 10px solid transparent;
 
                 & h2 {
-                    font-size: 2rem;
+                    font-size: 1rem;
                     text-align: end;
                     margin-bottom: 1rem;
                     color: #000;
@@ -394,6 +421,7 @@ input {
                 }
 
                 & h4 {
+                  font-size: .5rem;
                   padding-bottom: .3rem;
                 }
 
@@ -442,7 +470,9 @@ input {
                   align-items: end;
 
                   & svg {
-                    margin: 1rem;
+                    height: auto;
+                    width: 15px;
+                    margin: 0rem;
                     transition: all 0.1s ease;
 
                     &:hover {
@@ -483,7 +513,7 @@ input {
                 display: flex;
                 justify-content: center;
                 height: auto;
-                max-height: 440px;
+                max-height: 220px;
                 width: 100%;
                 margin-bottom: 1rem;
                 transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -504,10 +534,14 @@ input {
       }
 
         & #add-book {
-            background-color: #8926b5;
+            height: fit-content;
+            min-height: 450px;
+            width: fit-content;
+            color: red;
+            background-color: transparent;
+            border: none;
             opacity: 0.5;
             transition: all 0.5s ease;
-            color: red;
 
             & svg {
                 z-index: 0;
@@ -524,6 +558,7 @@ input {
 
             & h2 {
                 font-size: 2rem;
+                text-align: center;
                 margin-bottom: 1rem;
                 color: #fff;
                 text-shadow: 0 0 10px #000;
@@ -668,6 +703,18 @@ p {
       background-color: rgba(0, 0, 0, 0.5);
       background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, 0.5)), url(/img/star.png);
       z-index: -1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        height: 100px; /* Altura del degradado */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Degradado */
+        filter: blur(5px); /* Difuminado */
+        z-index: 1;
+      }
     }
 
     & h2 {
@@ -732,6 +779,7 @@ p {
     background-color: #f0f0f0;
     border: 2px solid rgba(0, 0, 0, 0.5);
     background-clip: padding-box;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0% 85%);
   }
 
     & .stories-wrapper {
@@ -739,7 +787,7 @@ p {
       height: 100%;
       width: 400%;
       transition: transform 0.7s ease-in-out;
-      animation: slide 16s infinite;
+      animation: slide 16s infinite; 
     }
 
     & .container-stories {
@@ -754,7 +802,6 @@ p {
       height: auto;
       display: block;
     }
-
 
     & img {
       height: 100%;
@@ -873,7 +920,9 @@ header {
         display: none;
       }
     }
-
+.margin-zero {
+  margin: 0;
+}
     & li {
       position: relative;
       font-size: 1rem;

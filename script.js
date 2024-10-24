@@ -1,15 +1,16 @@
 const $$ = (id) => document.getElementById(id);
 const $$$ = (e) => document.querySelectorAll(e);
+const $$$$ = (ee) => document.querySelector(ee);
 
 document.addEventListener('DOMContentLoaded', () => {
   // Menu
   const btnMenu = $$('btn-menu');
   const menu = $$('menu');
 
-  btnMenu.addEventListener('click', () => {
-  menu.classList.toggle('display-block');
-  document.body.style.overflow = 'hidden';
-  });
+  // btnMenu.addEventListener('click', () => {
+  // menu.classList.toggle('display-block');
+  // document.body.style.overflow = 'hidden';
+  // });
 
   $$$('.item-menu').forEach(item => {
     item.addEventListener('click', () => {
@@ -17,8 +18,41 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'auto';
     })
   })
-});
 
+
+// Toggle menu
+const explorerBooks = $$('explorer-books');
+let toggleStateMenu = true;
+btnMenu.addEventListener('click', () => {
+  if(toggleStateMenu) {
+    menu.classList.add('display-block');
+    document.body.style.overflow = 'hidden';
+    explorerBooks.classList.add = 'margin-zero';
+  } else {
+    menu.classList.remove('display-block');
+    document.body.style.overflow = 'auto';
+    explorerBooks.classList.remove= 'margin-zero';
+  }
+  toggleStateMenu =! toggleStateMenu;
+})
+
+// Style books
+const itemBooks = $$$('.item-book');
+const books = $$('books');
+itemBooks.forEach(book => {
+  book.addEventListener('click', () => {
+    book.style.scale = '1.3';
+  })
+
+  books.addEventListener('dblclick', () => {
+    itemBooks.forEach(book => {
+      book.style.scale = '1';
+    })
+  })
+})
+
+
+});
 
 
 // Obtener los elementos

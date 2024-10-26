@@ -10,87 +10,86 @@
     <script src="/script.js" type="module"></script>
 </head>
 <body>
- 
-    <header>
-        <nav>
-            <div class="">
+
+<header>
+    <nav>
+        <div class="">
             <a href="/">
                 <img src="/favicon/bookmarks.svg" 
                 alt="logo">
                 Feelty
             </a>
         </div>
-    
+
         <svg  xmlns="http://www.w3.org/2000/svg" id="btn-menu"  width="44"  height="44"  viewBox="0 0 24 24"  
         fill="none"  stroke="#fff"  stroke-width="3"  stroke-linecap="round"  
         stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" />
         <path d="M4 18l16 0" /></svg>
-    
-            <ul id="menu">
-                <!-- Ícono de usuario para abrir el modal -->
-  <a href="#" id="loginBtn">
-    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-</a>
-                <a href="#our-team">
-                    <li class="item-menu" id="about-us">Nosotros<img src="/img/line.png" 
-                        alt="">
-                    </li>
-                </a>
-                <a href="#books">
-                    <li class="item-menu">Leer<img src="/img/line.png" 
-                        alt="">
-                    </li>
-                </a>
-                <a href="#starbooks">
-                    <li class="item-menu">Tendencia<img src="/img/line.png" 
-                        alt="">
-                    </li>
-                </a>
-                <a href="#buy-books">
-                    <li class="item-menu">Comprar<img src="/img/line.png" 
-                        alt="">
-                    </li>
-                </a>
-                <a href="/html/foroblog.html">
-                    <li class="item-menu explorer-books" id="explorer-books">Descubrir Libros<img src="/img/line.png" 
-                        alt="">
-                    </li>
-                </a>
-            </ul>
-        </nav>
-    </header> 
+
+        <ul id="menu">
+            <a href="#" id="loginBtn">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+            </a>
+            <a href="#our-team">
+                <li class="item-menu" id="about-us">Nosotros<img src="/img/line.png" 
+                    alt="">
+                </li>
+            </a>
+            <a href="#books">
+                <li class="item-menu">Leer<img src="/img/line.png" 
+                    alt="">
+                </li>
+            </a>
+            <a href="#starbooks">
+                <li class="item-menu">Tendencia<img src="/img/line.png" 
+                    alt="">
+                </li>
+            </a>
+            <a href="#buy-books">
+                <li class="item-menu">Comprar<img src="/img/line.png" 
+                    alt="">
+                </li>
+            </a>
+            <a href="/html/foroblog.html">
+                <li class="item-menu explorer-books" id="explorer-books">Descubrir Libros<img src="/img/line.png" 
+                    alt="">
+                </li>
+            </a>
+        </ul>
+    </nav>
+</header> 
 
 <section id="home">
-  <!-- Modal de login -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>Iniciar sesión</h2>
-      <form>
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
-        
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <button type="submit" class="submit-btn">Entrar</button>
-      </form>
+    <!-- Modal de login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Iniciar sesión</h2>
+            <form>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="submit-btn">Entrar</button>
+            </form>
+        </div>
     </div>
-  </div>
 
-        <div class="container-home">
-            <div id="line">
-                <h1>Tu Libreria <br/>Personal</h1>
-                <p>Leer <span class="rainbow">Transforma</span></p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="360" height="24" viewBox="0 0 300 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right">
-                    <path stroke="none" d="M0 0h300v24H0z" fill="none"/>
-                    <path d="M5 12h290" />
-                    <path d="M290 18l6 -6" />
-                    <path d="M290 6l6 6" />
-                </svg>
-            </div>
-         <div class="people-img">
+    <div class="container-home">
+        <div id="line">
+            <h1>Tu Libreria <br/>Personal</h1>
+            <p>Leer <span class="rainbow">Transforma</span></p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="24" viewBox="0 0 300 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right">
+                <path stroke="none" d="M0 0h300v24H0z" fill="none"/>
+                <path d="M5 12h290" />
+                <path d="M290 18l6 -6" />
+                <path d="M290 6l6 6" />
+            </svg>
+        </div>
+        <div class="people-img">
             <div class="item-img">
                 <img src="/img/Landing/pexels-photo-774909.jpg" 
                 alt="">
@@ -99,7 +98,7 @@
                 <img src="/img/Landing/pexels-photo-1760901.webp" 
                 alt="">
             </div>
-         </div>
+        </div>
     </div>
 </section>
 
@@ -525,38 +524,36 @@
 
     </section>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-              <h4>Feelty</h4>
-              <p>Tu fuente de conocimiento y cultura. Explora nuestros libros cuidadosamente seleccionados.</p>
-            </div>
-        
-            <div class="footer-links">
-              <h4>Bussines</h4>
-              <ul>
-                <li><a href="#">Contacto</a></li>
-              </ul>
-            </div>
-        
-            <div class="footer-subscription">
-              <h4>Suscríbete</h4>
-              <form action="#">
-                <input type="email" placeholder="Ingresa tu email" required>
-                <button>Suscribirme</button>
-              </form>
-              <p class="subscription-info">Recibe las últimas novedades y ofertas directamente en tu bandeja de entrada.</p>
-            </div>
-          </div>
-          
-          <div class="footer-bottom">
-            <a href="/html/rules.html"><button>Politicas de privacidad</button></a>
-            <p>&copy; 2024 Feelty ­· Todos los derechos reservados.</p>
-          </div>
-
-          <a href="/"><img src="/favicon/bookmarks.svg" 
-            alt="logo"></a>
-
-    </footer>
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+          <h4>Feelty</h4>
+          <p>Tu fuente de conocimiento y cultura. Explora nuestros libros cuidadosamente seleccionados.</p>
+        </div>
+    
+        <div class="footer-links">
+          <h4>Bussines</h4>
+          <ul>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-subscription">
+          <h4>Suscríbete</h4>
+          <form action="#">
+            <input type="email" placeholder="Ingresa tu email" required>
+            <button>Suscribirme</button>
+          </form>
+          <p class="subscription-info">Recibe las últimas novedades y ofertas directamente en tu bandeja de entrada.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <a href="/html/rules.html"><button>Politicas de privacidad</button></a>
+        <p>&copy; 2024 Feelty ­· Todos los derechos reservados.</p>
+      </div>
+      <a href="/"><img src="/favicon/bookmarks.svg" 
+        alt="logo"></a>
+</footer>
 </body>
 </html>

@@ -35,6 +35,7 @@ body {
     margin: auto;
     /* background: linear-gradient(90deg, var(--primary-color) 66%, #ffffff 100%),
     url("/img/Background/patron-bg-v03.png"); */
+    background: linear-gradient(80deg, rgba(41,41,41,0.9332107843137255) 0%, rgb(20, 10, 20) 0%, rgba(20,20,20,0.9836309523809523) 95%);
     background-size: contain;
     background-repeat: repeat;
     background-position: center;
@@ -389,7 +390,6 @@ input {
     position: relative;
     height: auto;
     width: 100%;
-    background-color: var(--last-color);
     /* margin: 7rem 0; */
 
 
@@ -401,16 +401,6 @@ input {
       position: absolute;
       object-fit: contain;
     } */
-    
-        & .feelty {
-            z-index: 0;
-            position: absolute;
-            top: 0;
-            left: 5px;
-            height: auto;
-            width: 20%;  
-            filter: contrast(.8);         
-        }
 
         & .container-books {
             position: relative;
@@ -595,6 +585,7 @@ input {
       }
 
         & #add-book {
+          position: relative;
             height: fit-content;
             min-height: 250px;
             width: 250px;
@@ -608,7 +599,7 @@ input {
                 z-index: 0;
                 position: absolute;
                 height: auto;
-                width: 250px;
+                width: 150px;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
@@ -618,7 +609,7 @@ input {
             }
 
             & h2 {
-                font-size: 2rem;
+              font-size: 1rem;
                 text-align: center;
                 margin-bottom: 1rem;
                 color: #fff;
@@ -1174,24 +1165,27 @@ body.o {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
+      text-align: center;
+      gap: .5rem;
+      padding: .5rem 2rem;
+      backdrop-filter: blur(20px);
+      border: 1px solid #ffffff27;
+      border-radius: 10px;
+      transition: all .5s ease;
 
     & p {
-      position: relative;
-      backdrop-filter: blur(20px);
-      font-size: 1.3rem;
-      color: #fff;
-      border-radius: 10px;
-      margin-top: 0;
-      padding: .5rem;
-      border: 1px solid #ffffff27;
-      transition: all .1s;
+      font-size: 1rem;
+    }
 
-      &:hover {
-        background: linear-gradient(45deg, var(--black), var(--white), var(--black));
-        background-size: 2200px 200%;
-        background-repeat: no-repeat;
-      }
+    &::after {
+      content: "Top Categories";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: rgb(255, 45, 45);
+      text-shadow: 0 0 40px #000;
+      font-size: .6rem;
+      padding: .5rem;
     }
   }
 
@@ -1349,14 +1343,13 @@ body.o {
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  margin: 2rem auto;
+  margin: 4rem auto;
   padding: 3rem;
   color: var(--white);
   background: url(/img/Aliados/Dark-Gradient-07.png);
   background-size: cover;
   background-position: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   overflow: hidden;
 
   & h2 {
@@ -1485,8 +1478,8 @@ p {
 
 #our-team {
   position: relative;
-  height: 100%;
-  width: 100%;
+  height: 60vh;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1523,9 +1516,9 @@ p {
       border: 1px solid var(--secondary-color);
       border-radius: 50%;
       padding: 1rem;
-      margin: 1rem;
       transition: all 0.3s;
       backdrop-filter: blur(5px);
+      transform: scale(.5);
       
       &:hover {
         transform: scale(1.1);
@@ -1540,7 +1533,7 @@ p {
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
     font-style: italic;
     max-width: 800px;
@@ -1552,8 +1545,9 @@ p {
 footer {
   z-index: 2;
   position: relative;
-  background: linear-gradient(80deg, rgba(41,41,41,0.9332107843137255) 0%, rgb(20, 10, 20) 0%, rgba(20,20,20,0.9836309523809523) 95%);
+  /* background: linear-gradient(80deg, rgba(41,41,41,0.9332107843137255) 0%, rgb(20, 10, 20) 0%, rgba(20,20,20,0.9836309523809523) 95%); */
   color: #ffffff; /* Texto en blanco */
+  margin-top: 6rem;
   padding: 40px 0; /* Espaciado vertical */
   font-family: Arial, sans-serif;
 
@@ -1734,7 +1728,7 @@ footer {
     & .container-home {
 
       & .people-img {
-        transform: translateY(100px);
+        transform: translateY(85px);
 
         & .item-img:nth-child(1) {
             left: -5px;

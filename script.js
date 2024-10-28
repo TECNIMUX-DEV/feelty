@@ -4,6 +4,7 @@ const $$$$ = (ee) => document.querySelector(ee);
 
 document.addEventListener('DOMContentLoaded', () => {
   // Menu
+  const navegationMenu = $$('navegation-menu');
   const btnMenu = $$('btn-menu');
   const menu = $$('menu');
 
@@ -19,16 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-
 // Toggle menu
 const explorerBooks = $$('explorer-books');
 let toggleStateMenu = true;
 btnMenu.addEventListener('click', () => {
   if(toggleStateMenu) {
+    navegationMenu.classList.add('bg-nav');
     menu.classList.add('display-block');
     document.body.style.overflow = 'hidden';
     explorerBooks.classList.add = 'margin-zero';
   } else {
+    navegationMenu.classList.remove('bg-nav');
     menu.classList.remove('display-block');
     document.body.style.overflow = 'auto';
     explorerBooks.classList.remove= 'margin-zero';

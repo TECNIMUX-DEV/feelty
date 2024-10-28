@@ -110,6 +110,7 @@ var(--white)  /* Blanco */
   font-size: 24px;
   cursor: pointer;
   color: var(--white);
+  opacity: 0.6;
   margin: 20px;
   padding: 4px;
   border: 2px solid #fff;
@@ -330,7 +331,7 @@ input {
 /* Nav bar vertical */
 .social-media {
     width: 50px; /* Ancho del apartado para ajustar al tamaño del ícono */
-    position: sticky; /* Cambiar a sticky */
+    position: sticky;
     top: 50px; /* Distancia desde la parte superior de la pantalla */
     left: 0; /* Pegado a la derecha */
     background: #22222227;
@@ -343,8 +344,20 @@ input {
     text-align: center;
     z-index: 50; /* Asegura que esté encima de otros elementos */
     transform: rotate(-90deg) translate(0 , -55%);
-    border-bottom: 1px dashed #adadad;
     transition: all 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 10px;
+      width: 100%;
+      margin: -1rem 0;
+      border: 15px solid var(--white);
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;  
+    }
 
     &:hover {
       display: block;
@@ -390,6 +403,7 @@ input {
     position: relative;
     height: auto;
     width: 100%;
+    background-color: var(--last-color);
     /* margin: 7rem 0; */
 
 
@@ -404,32 +418,32 @@ input {
 
         & .container-books {
             position: relative;
-            width: 40%;
+            width: 45%;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: .5rem;
+            gap: 2rem;
             flex-wrap: wrap;
             margin: auto;
-            padding: 3rem .5rem;
-            border-radius: 3px;
-            /* max-width: 500px; */
+            padding: 3rem 1rem;
 
             & h2:nth-child(1) {
-                width: 100%;
-                text-align: center;
-                color: var(--white);
-                text-shadow: 0 0 10px #000000;
-                font-size: 4rem;
-                font-weight: bold;
-                margin-bottom: 20px;
-                padding: 5rem 1rem 0 1rem;
+              width: 100%;
+              text-align: center;
+              color: var(--white);
+              text-shadow: 0 0 10px #000000;
+              font-size: 4rem;
+              font-weight: bold;
+              margin-bottom: 20px;
+              padding: 5rem 1rem 0 1rem;
             }
 
             & h4 {
               width: 100%;
               text-align: start;
               text-shadow: 0 0 25px #000;
+              border-radius: 3px;
+              border: 1px solid #ffffff27;
               padding: .3rem;
             }
 
@@ -763,7 +777,7 @@ p {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgb(27, 27, 27), #00000034);
+      background: linear-gradient(80deg, rgb(50 50 50), #000000d6);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -783,11 +797,12 @@ p {
       font-weight: 300;
       text-align: center;
       text-shadow: 0 0 15px #000;
+      opacity: 0.8;
 
     }
 
     & p:last-child {
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
@@ -1103,6 +1118,9 @@ header {
 .display-block {
   display: block;
 }
+.bg-nav{
+  background-color: var(--last-color);
+}
 
 body.o {
   overflow-y: auto;
@@ -1120,17 +1138,20 @@ body.o {
 #starbooks {
     position: relative;
     height: 100vh;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: auto;
-    background-image: url(/img/starbooks-section-responsive.png),
-    radial-gradient(88.42% 78.42% at -9.41% 51.58%, rgba(253, 253, 253, 0.34) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 2rem;
+    background-image:
+    radial-gradient(88.42% 78.42% at -9.41% 51.58%, rgba(253, 253, 253, 0.082) 0%, rgba(7, 7, 7, 0.76) 100%);
     background-blend-mode: difference;
     background-repeat: no-repeat;
     background-size: cover;
+    border: 1px solid #ffffff27;
+    border-radius: 10px;
 
     & h2 {
       z-index: 1;
@@ -1155,9 +1176,13 @@ body.o {
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
-          filter:drop-shadow( 5px 45px 5px #ffffff15);
+          filter:drop-shadow( 5px 45px 5px #ffffff15) contrast(0.3);
           transform: rotate(65.5deg);
         }
+    }
+
+    & p {
+      opacity: .6;
     }
 
     & .tags {
@@ -1167,10 +1192,7 @@ body.o {
       align-items: center;
       text-align: center;
       gap: .5rem;
-      padding: .5rem 2rem;
-      backdrop-filter: blur(20px);
-      border: 1px solid #ffffff27;
-      border-radius: 10px;
+      padding: 0 2rem;
       transition: all .5s ease;
 
     & p {
@@ -1199,8 +1221,9 @@ body.o {
 
     & .item-starbook {
         height: 100%;
-        width: 100%;
+        width: 90%;
         margin-right: 7rem;
+        transform: scale(.9);
     } 
     .container-star-book {
         position: relative;
@@ -1218,6 +1241,7 @@ body.o {
         align-items: center;
         flex-direction: column;
         flex-wrap: wrap;
+        
         /* top: 10%; */
         /* left: 40%; */
         height: 400px;
@@ -1234,6 +1258,8 @@ body.o {
         transform: rotateX(60deg) scale(0.6);
         perspective: 900px;
         transition: .5s all ease;
+        z-index: 10;
+        transform: scale(1) translateY(50px);
       }
       
       #c0 {
@@ -1254,11 +1280,9 @@ body.o {
         z-index: 0;
       }
       
-      .container:hover {
-        z-index: 10;
-        transform: scale(1) translateY(50px);
-        cursor: pointer;
-      }
+      /* .container:hover {
+
+      } */
       
       .image {
         position: absolute;
@@ -1343,7 +1367,7 @@ body.o {
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  margin: 4rem auto;
+  margin: 0 0 4rem 0;
   padding: 3rem;
   color: var(--white);
   background: url(/img/Aliados/Dark-Gradient-07.png);
@@ -1357,6 +1381,12 @@ body.o {
     color: var(--white);
     font-weight: bold;
     text-align: start;
+    padding: 5rem 5rem 0 1rem;
+  }
+
+  & p:nth-child(2) {
+    opacity: .6;
+    padding: 0 1rem 1rem 1rem;
   }
 
   & button {
@@ -1479,19 +1509,21 @@ p {
 #our-team {
   position: relative;
   height: 60vh;
-  width: 80%;
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--last-color);
-  background-image: url(/img/castillo.png),
-  linear-gradient(-30deg, rgba(0, 0, 0, 0.712) 0%, rgb(12, 12, 12) 92%);
+  /* background-color: var(--last-color); */
+  background-image: 
+  linear-gradient(-30deg, rgba(0, 0, 0, 0.151) 0%, rgba(12, 12, 12, 0.548) 92%);
   background-blend-mode: soft-light;
   background-size: auto;
   background-position: center;
   backdrop-filter:blur(20px);
   box-shadow: 0 0 20px #0000003f;
+  border: 1px solid #ffffff18;
+  border-radius: 15px;
   text-align: center;
   text-shadow: 0 0 7px #000000;
   margin: auto;
@@ -1518,10 +1550,10 @@ p {
       padding: 1rem;
       transition: all 0.3s;
       backdrop-filter: blur(5px);
-      transform: scale(.5);
+      transform: scale(.8);
       
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1);
       }
     }
   }
@@ -1537,7 +1569,7 @@ p {
     font-weight: 800;
     font-style: italic;
     max-width: 800px;
-    opacity: 0.8;
+    opacity: 0.6;
 
   }
 }
@@ -1547,18 +1579,21 @@ footer {
   position: relative;
   /* background: linear-gradient(80deg, rgba(41,41,41,0.9332107843137255) 0%, rgb(20, 10, 20) 0%, rgba(20,20,20,0.9836309523809523) 95%); */
   color: #ffffff; /* Texto en blanco */
+  background-color: #0000002d;
+  backdrop-filter: blur(15px);
   margin-top: 6rem;
   padding: 40px 0; /* Espaciado vertical */
   font-family: Arial, sans-serif;
+  border-top: 1px solid #ffffff27;
 
   & img {
     z-index: -1;
     position: absolute;
-    top: 20px;
-    left: 40px;
+    top: 100px;
+    left: 100px;
     height: auto;
     width: 170px;
-    filter: contrast(0.2);
+    filter: contrast(0.1);
     -webkit-user-drag: none;
 
     @media (max-width: 1200px) {
@@ -1819,5 +1854,10 @@ footer {
       -webkit-user-drag: none;
   
     }
+  }
+
+  #our-team {
+    height: auto;
+    width: 95%;
   }
 }

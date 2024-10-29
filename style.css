@@ -334,10 +334,9 @@ input {
     position: sticky;
     top: 50px; /* Distancia desde la parte superior de la pantalla */
     left: 0; /* Pegado a la derecha */
-    background: #22222227;
-    backdrop-filter: blur(20px);
+    background: #e6e6e6a1;
+    backdrop-filter: blur(60px);
     padding: 10px; /* Espaciado interno */
-    border: 1px solid #ffffff27;
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
     color: white;
@@ -353,7 +352,7 @@ input {
       right: 0;
       height: 10px;
       width: 100%;
-      margin: -1rem 0;
+      margin: -.5rem 0;
       border: 15px solid var(--white);
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;  
@@ -785,20 +784,31 @@ p {
     }
 
     & h2 {
+      z-index: 2;
       font-size: 4rem;
-      color: var(--white);
+      color: var(--last-color);
       font-weight: 900;
       letter-spacing: .2rem;
-      text-shadow: 0 0 15p #000;
+      text-shadow: 0 0 15p #ffffff;
+      border: 1px solid #ffffff27;
+      padding: 3rem;
+
+      & span {
+        /* color: rgb(255, 198, 255); */
+        color: var(--last-color);
+        text-shadow: 0 0 1px #ffffff;
+      }
     }
     
     & p {
+      z-index: 2;
       font-size: 1rem;
+      color: var(--black);
       font-weight: 300;
       text-align: center;
-      text-shadow: 0 0 15px #000;
-      opacity: 0.8;
-
+      text-shadow: 0 0 1px #000;
+      opacity: 0.6;
+      padding-top: 1rem;
     }
 
     & p:last-child {
@@ -809,28 +819,10 @@ p {
       margin-top: 2rem;
     }
 
-    &::after {
-      content: "";
-      z-index: 10;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      height: 40px;
-      width: 40px;
-      font-size: 5rem;
-      color: #fff;
-      border-radius: 5px;
-      background: url(/img/Logo/bookmarks.svg);
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(20px);
-      padding: 5px 10px;
-    }
-
     & .slider-stories {
-    position: relative;
-    height: 60vh;
-    width: 70%;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -841,8 +833,7 @@ p {
     border: 2px solid rgba(0, 0, 0, 0.5);
     background-clip: padding-box;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 100%);
-    border-radius: 10px;
-    filter: contrast(0.8);
+    filter: contrast(0.2);
     clip-path: polygon(0% 0%, 0% 100%, 14% 100%, 28% 86%, 73% 86%, 86% 100%, 48% 100%, 100% 100%, 100% 0%);
 
   }
@@ -943,7 +934,7 @@ header {
       padding: .5rem;
       display: none;
 
-      &:hover {
+      &:active {
         background-color: var(--primary-color);
       }
 
@@ -1143,15 +1134,12 @@ body.o {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: auto;
-    padding: 2rem;
-    background-image:
+    margin: -5rem auto;
+    /* background-image:
     radial-gradient(88.42% 78.42% at -9.41% 51.58%, rgba(253, 253, 253, 0.082) 0%, rgba(7, 7, 7, 0.76) 100%);
     background-blend-mode: difference;
     background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid #ffffff27;
-    border-radius: 10px;
+    background-size: cover; */
 
     & h2 {
       z-index: 1;
@@ -1223,7 +1211,7 @@ body.o {
         height: 100%;
         width: 90%;
         margin-right: 7rem;
-        transform: scale(.9);
+        transform: scale(.8);
     } 
     .container-star-book {
         position: relative;
@@ -1515,19 +1503,19 @@ p {
   align-items: center;
   flex-direction: column;
   /* background-color: var(--last-color); */
-  background-image: 
+  /* background-image: 
   linear-gradient(-30deg, rgba(0, 0, 0, 0.151) 0%, rgba(12, 12, 12, 0.548) 92%);
   background-blend-mode: soft-light;
   background-size: auto;
   background-position: center;
   backdrop-filter:blur(20px);
-  box-shadow: 0 0 20px #0000003f;
-  border: 1px solid #ffffff18;
+  box-shadow: 0 0 20px #0000003f; 
+  border: 1px solid #ffffff18;*/
   border-radius: 15px;
   text-align: center;
   text-shadow: 0 0 7px #000000;
   margin: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 2rem;
   overflow-y: hidden;
 

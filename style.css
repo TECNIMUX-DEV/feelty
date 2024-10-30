@@ -137,6 +137,7 @@ var(--white)  /* Blanco */
 }
 
 .modal-content {
+  position: relative;
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -168,12 +169,14 @@ input {
 }
 
 .submit-btn {
-  padding: 10px;
-  background-color: #6200ea;
+  background-color: var(--last-color) !important;
   color: white;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: auto;
+  font-size: 1.2rem !important;
+  padding: 1rem !important;
+  margin: 0 !important;
   margin-top: 20px;
 }
 
@@ -334,9 +337,9 @@ input {
     position: sticky;
     top: 50px; /* Distancia desde la parte superior de la pantalla */
     left: 0; /* Pegado a la derecha */
-    background: #e6e6e6a1;
+    background: #272727a1;
     backdrop-filter: blur(60px);
-    padding: 10px; /* Espaciado interno */
+    padding: 10px 10px 20px 10px; /* Espaciado interno */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
     color: white;
@@ -431,10 +434,9 @@ input {
               text-align: center;
               color: var(--white);
               text-shadow: 0 0 10px #000000;
-              font-size: 4rem;
+              font-size: 2rem;
               font-weight: bold;
-              margin-bottom: 20px;
-              padding: 5rem 1rem 0 1rem;
+              padding: 1rem;
             }
 
             & h4 {
@@ -463,8 +465,8 @@ input {
                 /* height: 652px;
                 max-height: 652px;
                 max-width: 350px; */
-                height: 352px;
-                max-height: 352px;
+                height: 362px;
+                max-height: 362px;
                 max-width: 180px;
                 width: 180px;
                 width: 100%;
@@ -622,11 +624,11 @@ input {
             }
 
             & h2 {
-              font-size: 1rem;
-                text-align: center;
-                margin-bottom: 1rem;
-                color: #fff;
-                text-shadow: 0 0 10px #000;
+              font-size: 1.1rem;
+              text-align: center;
+              margin-bottom: 1rem;
+              color: #fff;
+              text-shadow: 0 0 10px #000;
             }
 
             & p {
@@ -788,10 +790,12 @@ p {
       font-size: 4rem;
       color: var(--last-color);
       font-weight: 900;
+      text-align: center;
       letter-spacing: .2rem;
       text-shadow: 0 0 15p #ffffff;
       border: 1px solid #ffffff27;
-      padding: 3rem;
+      margin: 0 auto;
+      padding: 1.5rem 0;
 
       & span {
         /* color: rgb(255, 198, 255); */
@@ -1128,13 +1132,13 @@ body.o {
 
 #starbooks {
     position: relative;
-    height: 100vh;
+    height: auto;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: -5rem auto;
+    margin: -8rem auto;
     /* background-image:
     radial-gradient(88.42% 78.42% at -9.41% 51.58%, rgba(253, 253, 253, 0.082) 0%, rgba(7, 7, 7, 0.76) 100%);
     background-blend-mode: difference;
@@ -1356,7 +1360,7 @@ body.o {
   height: 100vh;
   width: 100%;
   margin: 0 0 4rem 0;
-  padding: 3rem;
+  padding: 6rem 2rem;
   color: var(--white);
   background: url(/img/Aliados/Dark-Gradient-07.png);
   background-size: cover;
@@ -1365,11 +1369,11 @@ body.o {
   overflow: hidden;
 
   & h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--white);
     font-weight: bold;
     text-align: start;
-    padding: 5rem 5rem 0 1rem;
+    padding: 0 1rem;
   }
 
   & p:nth-child(2) {
@@ -1384,7 +1388,7 @@ body.o {
 
   & .slider-buy {
     width: 100%;
-    padding: 3rem;
+    padding: 0 3rem 1rem 0;
     margin: auto;
     overflow: auto;
   }
@@ -1408,7 +1412,7 @@ p {
 }
 
 .libro-lista {
-  max-height: 60%;
+  /* max-height: 60%; */
   position: relative;
   width: 150%;
   display: flex;
@@ -1424,9 +1428,9 @@ p {
   height: 350px;
   width: 450px;
   min-width: 450px;
-  padding: 1rem;
+  /* padding: 1rem; */
   border: 1px solid #cccccc2f; /* Borde alrededor de cada empresa */
-  border-radius: 5px; /* Bordes redondeados */
+  border-radius: 15px; /* Bordes redondeados */
   transition: transform 0.2s; /* Animación al pasar el ratón */
   opacity: 0.5;
   background: linear-gradient(133deg, rgba(41,41,41,0.9332107843137255) 0%, rgba(20,20,20,0.9836309523809523) 64%);
@@ -1434,7 +1438,7 @@ p {
   background-blend-mode: screen;
   background-position: center;
   background-repeat: no-repeat;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); 
 
   & p {
     opacity: 0.5;
@@ -1445,12 +1449,13 @@ p {
   }
 
   & h2 {
+    word-break: break-word;
     opacity: 1;
   }
 
   & img {
     position: absolute;
-    bottom: 0px;
+    bottom: 40px;
     right: 25px;
     height: auto;
     width: 225px;
@@ -1466,6 +1471,7 @@ p {
 }
 
 .libro-lista li:hover img {
+  z-index: -1;
   filter: contrast(.7);
   }
 
@@ -1833,8 +1839,8 @@ footer {
   
     & img {
       position: absolute;
-      bottom: 0px;
-      right: 25px;
+      bottom: 30px;
+      right: 35px;
       height: auto;
       width: 125px;
       filter: opacity(.2) contrast(.1) brightness(.8);

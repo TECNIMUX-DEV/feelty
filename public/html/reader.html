@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de PDF  Feelty</title>
+    <link rel="icon" href="/favicon/article.svg" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #pdfViewerContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            width: 90%;
+            overflow: hidden;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .pdf-viewer {
+            transition: transform 0.3s ease; /* Transición suave para el zoom */
+            transform-origin: top left; /* Hace que el zoom se haga desde la esquina superior izquierda */
+        }
+
+        #pdfViewerContainer.scrollable {
+            overflow: auto; /* Scroll cuando el zoom es alto */
+        }
+
+        #controlsContainer {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #8926b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7c1d9f;
+        }
+
+        input[type="file"] {
+            margin: 20px;
+        }
+
+        #pageCounter {
+            position: absolute;
+            top: 35px;
+            font-size: 18px;
+            color: #333;
+            z-index: 10;
+        }
+
+        #title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #8926b5;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="title">Principal</div>
+    <input type="file" id="fileInput" accept="application/pdf">
+    <div id="pageCounter">Página 1 de 0</div>
+    <div id="pdfViewerContainer">
+        <div id="pdfViewer" class="pdf-viewer"></div>
+    </div>
+
+    <div id="controlsContainer">
+        <button id="prevPage">Anterior</button>
+        <button id="nextPage">Siguiente</button>
+        <button id="zoomIn">+</button>
+        <button id="zoomOut">-</button>
+    </div>
+
+    <script>
+        let pdfDoc = null;
+        let currentPage = 1;
+        let scale = 1.5;
+        const maxZoom = 3;  // Límite de zoom máximo
+        const minZoom = 0.5; // Límite de zoom mínimo
+        let totalPages = 0;
+
+        // Cargar PDF desde el input
+        document.getElementById('fileInput').addEventListener('change', function () {
+            const file = this.files[0];
+            if (file && file.type === 'application/pdf') {
+                const fileURL = URL.createObjectURL(file);
+                loadPDF(fileURL);
+                document.getElementById('title').innerText = file.name; // Actualiza el título
+            } else {
+                alert('Selecciona un archivo PDF.');
+            }
+        });
+
+        // Función para cargar el PDF
+        async function loadPDF(url) {
+            const loadingTask = pdfjsLib.getDocument(url);
+            pdfDoc = await loadingTask.promise;
+            totalPages = pdfDoc.numPages;
+            renderPage(currentPage);
+        }
+
+        // Función para renderizar la página del PDF
+        async function renderPage(num) {
+            const page = await pdfDoc.getPage(num);
+            const viewport = page.getViewport({ scale: scale });
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfViewerContainer = document.getElementById('pdfViewerContainer');
+
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            pdfViewer.innerHTML = '';
+            pdfViewer.appendChild(canvas);
+
+            const renderContext = { canvasContext: context, viewport: viewport };
+            await page.render(renderContext).promise;
+
+            // Centrar la imagen (el libro)
+            pdfViewer.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            pdfViewer.style.position = 'absolute';
+            pdfViewer.style.left = '50%';
+            pdfViewer.style.top = '50%';
+
+            // Si el zoom es mayor a 1.5, habilitar scroll
+            if (scale > 1.5 || canvas.width > pdfViewerContainer.clientWidth || canvas.height > pdfViewerContainer.clientHeight) {
+                pdfViewerContainer.classList.add('scrollable');
+            } else {
+                pdfViewerContainer.classList.remove('scrollable');
+            }
+
+            // Actualizar contador de páginas
+            document.getElementById('pageCounter').innerText = `Página ${currentPage} de ${totalPages}`;
+        }
+
+        // Navegación de páginas con botones
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            if (currentPage < pdfDoc.numPages) {
+                currentPage++;
+                renderPage(currentPage);
+            }
+        });
+
+        // Zoom in
+        document.getElementById('zoomIn').addEventListener('click', () => {
+            if (scale < maxZoom) {
+                scale += 0.1;
+                renderPage(currentPage);
+            }
+        });
+
+        // Zoom out
+        document.getElementById('zoomOut').addEventListener('click', () => {
+            if (scale > minZoom) {
+                scale -= 0.1;
+                renderPage(currentPage);
+            }
+        });
+
+        // Navegación con teclas del teclado
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                // Avanzar página
+                if (currentPage < pdfDoc.numPages) {
+                    currentPage++;
+                    renderPage(currentPage);
+                }
+            } else if (event.key === 'ArrowLeft') {
+                // Retroceder página
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPage(currentPage);
+                }
+            } else if (event.key === '+') {
+                // Zoom in con tecla '+'
+                if (scale < maxZoom) {
+                    scale += 0.1;
+                    renderPage(currentPage);
+                }
+            } else if (event.key === '-') {
+                // Zoom out con tecla '-'
+                if (scale > minZoom) {
+                    scale -= 0.1;
+                    renderPage(currentPage);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

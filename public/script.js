@@ -58,7 +58,7 @@ itemBooks.forEach(book => {
 
 
 // Obtener los elementos
-const loginBtn = document.getElementById("loginBtn");
+const loginBtn = document.getElementById("login-btn");
 const loginModal = document.getElementById("login-acc");
 const closeModal = document.getElementById("closeModal");
 
@@ -79,3 +79,19 @@ window.addEventListener("click", (event) => {
     loginModal.style.display = "none";
   }
 });
+
+
+// Open Newsletter
+const containerNewsletter = document.getElementById("container-newsletter");
+const btnOpenNewsletter = document.getElementById("btn-open-newsletter");
+const btnCloseNewsletter = document.getElementById("close-newsletter");
+
+btnOpenNewsletter.addEventListener("click", () => {
+    containerNewsletter.style.display = "flex";
+    document.body.style.overflow = 'hidden';
+  })
+
+btnCloseNewsletter.addEventListener("click", () => {
+  containerNewsletter.style.display = "none";
+  document.body.style.overflow = 'auto';
+})

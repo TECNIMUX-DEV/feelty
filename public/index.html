@@ -17,9 +17,6 @@
 
 
 
-
-
-
 <!-- Auth -->
  <section id="login-acc">
     <h2>Registro</h2>
@@ -51,18 +48,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <header>
     <nav id="navegation-menu">
         <div class="">
@@ -80,10 +65,12 @@
         <path d="M4 18l16 0" /></svg>
 
         <ul id="menu">
-            <a href="#" id="loginBtn">
+            <a href="#">
+                <li id="login-btn">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                </li>
             </a>
-            <a href="/html/reader.html">
+            <a href="/public/html/reader.html">
                 <li class="item-menu">Leer<img src="/img/line.png" 
                     alt="">
                 </li>
@@ -103,7 +90,7 @@
                     alt="">
                 </li>
             </a>
-            <a href="/html/foroblog.html">
+            <a href="/public/html/foroblog.html">
                 <li class="item-menu explorer-books" id="explorer-books">Descubrir Libros<img src="/img/line.png" 
                     alt="">
                 </li>
@@ -118,7 +105,7 @@
         <div class="modal-content">
             <span id="closeModal" class="close">&times;</span>
             <h2>Iniciar sesión</h2>
-            <form>
+            <!-- <form>
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required>
                 
@@ -126,7 +113,7 @@
                 <input type="password" id="password" name="password" required>
                 
                 <button type="submit" class="submit-btn">Entrar</button>
-            </form>
+            </form> -->
         </div>
     </div>
 
@@ -143,11 +130,11 @@
         </div>
         <div class="people-img">
             <div class="item-img">
-                <img src="/img/Landing/pexels-photo-774909.jpg" 
+                <img src="/public/img/Landing/pexels-photo-774909.jpg" 
                 alt="">
             </div>
             <div class="item-img">
-                <img src="/img/Landing/pexels-photo-1760901.webp" 
+                <img src="/public/img/Landing/pexels-photo-1760901.webp" 
                 alt="">
             </div>
         </div>
@@ -161,18 +148,18 @@
     <div class="slider-stories">
         <div class="stories-wrapper">
             <div class="container-stories">
-                <div class="item">
-                    <img src="/img/Carousel/monochrome_umbrella_rain_overalls_women_model-246561.jpg" 
+                <!-- <div class="item">
+                    <img src="/public/img/Carousel/monochrome_umbrella_rain_overalls_women_model-246561.jpg" 
                     alt="">
                 </div>
                 <div class="item">
-                    <img src="/img/Carousel/skillful-dancers-performing-dark-room-concert-light-smoke-sensual-couple-performing-artistic-emotional-contemporary-dance.jpg" 
+                    <img src="/public/img/Carousel/skillful-dancers-performing-dark-room-concert-light-smoke-sensual-couple-performing-artistic-emotional-contemporary-dance.jpg" 
                     alt="">
                 </div>
                 <div class="item">
-                    <img src="/img/Carousel/mujer-hermosa-elegante-modelo-moda-punk-retrato-estilo-vida-vanguardia-fondo-moda_171965-70191.avif" 
+                    <img src="/public/img/Carousel/mujer-hermosa-elegante-modelo-moda-punk-retrato-estilo-vida-vanguardia-fondo-moda_171965-70191.avif" 
                     alt="">
-                </div>
+                </div> -->
                 <div class="item">
                     <img src="https://parapentechicamocha.com/wp-content/uploads/2024/08/parapente-colombia.jpg-scaled.webp" 
                     alt="">
@@ -518,26 +505,42 @@
             <p class="">Empresas con las que contribuimos donde puedes comprar libros.</p>
             <div class="slider-buy">
                 <ul class="libro-lista">
-                    <li>
-                        <a href="https://www.amazon.com" target="_blank"><h2>Amazon</h2> <p>Una de las mayores librerías en línea con una amplia selección de libros.</p>
-                        <img src="/img/Aliados/amazon.png" 
-                        alt=""></a>
-                    </li>
-                    <li>
-                        <a href="https://www.casadellibro.com" target="_blank"><h2>Casa del Libro</h2> <p>Librería española con una extensa colección de libros en diversos géneros.</p>
-                        <img src="https://www.casadellibro.com.co/img/cabecera/CDL-LogoSecundario-RGB.svg" 
-                        alt=""></a>
-                    </li>
-                    <li>
-                        <a href="https://www.fnac.es" target="_blank"><h2>Panamericana</h2> <p>Tienda de electrónica y libros, con una variedad de títulos disponibles.</p>
-                        <img src="https://panamericana.vtexassets.com/arquivos/logo-panamericana-sin-fondo.svg" 
-                        alt=""></a>
-                    </li>
-                    <li>
-                        <a href="https://www.libreriacortes.com" target="_blank"><h2>Librería Lerner</h2> <p>Librería en línea con una buena selección de libros en español.</p>
-                        <img src="/img/Aliados/logo-1-io.png" 
-                        alt=""></a>
-                    </li>
+                    <a href="https://www.amazon.com" target="_blank">
+                        <li>
+                            <div class="to-buy"><h2>Comprar</h2></div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/1920px-Amazon_2024.svg.png" 
+                            alt="">
+                            <h2>Amazon</h2> 
+                            <p>Una de las mayores librerías en línea con una amplia selección de libros.</p>
+                        </li>
+                    </a>
+                    <a href="https://www.casadellibro.com" target="_blank">
+                        <li>
+                            <div class="to-buy"><h2>Comprar</h2></div>
+                            <img src="https://www.casadellibro.com.co/img/cabecera/CDL-LogoSecundario-RGB.svg" 
+                            alt="">
+                                <h2>Casa del Libro</h2> 
+                                <p>Librería española con una extensa colección de libros en diversos géneros.</p>
+                        </li>
+                     </a>
+                     <a href="https://www.fnac.es" target="_blank">
+                        <li>
+                            <div class="to-buy"><h2>Comprar</h2></div>
+                            <img src="https://panamericana.vtexassets.com/arquivos/logo-panamericana-sin-fondo.svg" 
+                            alt="">
+                                <h2>Panamericana</h2> 
+                                <p>Tienda de electrónica y libros, con una variedad de títulos disponibles.</p>
+                        </li>
+                    </a>
+                    <a href="https://www.libreriacortes.com" target="_blank">
+                        <li>
+                            <div class="to-buy"><h2>Comprar</h2></div>
+                            <img src="/public/img/Aliados/logo-1-io.png" 
+                            alt="">
+                                <h2>Librería Lerner</h2> 
+                                <p>Librería en línea con una buena selección de libros en español.</p>
+                        </li>
+                    </a>
                     <!-- <li>
                         <a href="https://www.libreriacapitol.com" target="_blank"><h2>Librería Capitol</h2> <p>Especializada en libros de texto y literatura general.</p>
                         <img src="/img/Aliados/amazon.png" 
@@ -558,7 +561,8 @@
     </section>
     <section id="our-team">
         <h2>Somos</h2>
-        <p>Un equipo que trabaja para hacer el conocimiento accesible, inspirar y transformar a los lectores en sus mejores versiones.</p>
+        <h3>Una Biblioteca que trabaja en ti para, inspirar y transformar a los lectores en sus mejores versiones.</h3>
+        <h4>Aquí tu eliges que quieres leer, sacas tu estilo y estableces tus metas.</h4>
         <div class="container-about">
         <div class="item-about">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="130"  height="130"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.088 4.82a10 10 0 0 1 9.412 .314a1 1 0 0 1 .493 .748l.007 .118v13a1 1 0 0 1 -1.5 .866a8 8 0 0 0 -8 0a1 1 0 0 1 -1 0a8 8 0 0 0 -7.733 -.148l-.327 .18l-.103 .044l-.049 .016l-.11 .026l-.061 .01l-.117 .006h-.042l-.11 -.012l-.077 -.014l-.108 -.032l-.126 -.056l-.095 -.056l-.089 -.067l-.06 -.056l-.073 -.082l-.064 -.089l-.022 -.036l-.032 -.06l-.044 -.103l-.016 -.049l-.026 -.11l-.01 -.061l-.004 -.049l-.002 -.068v-13a1 1 0 0 1 .5 -.866a10 10 0 0 1 9.412 -.314l.088 .044l.088 -.044z" /></svg>
@@ -575,7 +579,7 @@
         </div>
 
         <div class="item-about">
-            <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 24 24" fill="#ffff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" />
                 <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
@@ -583,9 +587,38 @@
               <p>Compra libros con nuestros populares aliados.</p>
         </div>
         </div>
-
-
     </section>
+
+    <div id="container-newsletter" class="container-newsletter">
+        <div class="subscription-modal">
+            <span id="close-newsletter" class="btn-close-nestletter">&times;</span>
+                <div class="subscription-image">
+                </div>
+            <div class="subscription-content">
+                    <h2>¿Por qué no descubrir nuevos libros y ofertas?</h2>
+                    <p>Recibirás todas las novedades de Feeltly directamente en tu email.</p>
+                    <form action="https://formspree.io/f/xovqddro" method="POST">
+                        <label for="email">Correo</label>
+                        <input type="email" name="email" placeholder="Tu correo" required>
+                
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                
+                        <div class="checkbox-container-subscription">
+                            <input type="checkbox" name="terms" required>
+                            <label for="terms">Para suscribirse debes aceptar nuestra <a href="/public/html/rules.html">política de privacidad</a>.</label>
+                        </div>
+                        <button type="submit" class="subscription-button">Lo quiero</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 
 <footer>
     <div class="footer-container">
@@ -603,10 +636,14 @@
     
         <div class="footer-subscription">
           <h4>Suscríbete</h4>
-          <form action="#">
-            <input type="email" placeholder="Ingresa tu email" required>
-            <button>Suscribirme</button>
-          </form>
+          <!-- <form action="#">
+            <input type="email" placeholder="Ingresa tu email" required> -->
+            <!-- modify this form HTML and place wherever you want your form -->
+
+            <!-- <a href="https://buttondown.com/newsletter-feelty?tag=sandwich"> -->
+                <button id="btn-open-newsletter">Suscribirme</button>
+            <!-- </a> -->
+          <!-- </form> -->
           <p class="subscription-info">Recibe las últimas novedades y ofertas directamente en tu bandeja de entrada.</p>
         </div>
       </div>
@@ -619,7 +656,7 @@
         alt="logo"></a>
 </footer>
 
-<script src="/script.js"></script>
+<script src="script.js"></script>
 <script src="register.js"></script>
 <script src="login.js"></script>
 </body>

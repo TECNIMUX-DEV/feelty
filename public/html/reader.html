@@ -4,20 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lector de PDF  Feelty</title>
-    <link rel="icon" href="/favicon/article.svg" type="image/x-icon">
+    <link rel="icon" href="/public/favicon/article.svg" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <style>
+        :root {
+        --white: #fff;
+        --black: #000;
+        --primary-color: #d894ff;
+        --secondary-color: #8926b5;
+        --last-color: #141414;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--last-color);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             flex-direction: column;
+            color: var(--white);
         }
 
         #pdfViewerContainer {
@@ -54,7 +68,7 @@
         button {
             padding: 10px 20px;
             background-color: #8926b5;
-            color: white;
+            color: var(--white);
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -70,25 +84,31 @@
 
         #pageCounter {
             position: absolute;
-            top: 35px;
+            top: -45px;
+            right: 10px;
             font-size: 18px;
-            color: #333;
+            color: #acacac;
             z-index: 10;
         }
 
         #title {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin: 20px 0;
             color: #8926b5;
+
+            & span {
+                color: var(--white);
+                opacity: .6;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div id="title">Principal</div>
+    <div id="title">Carga un libro <span>PDF</span></div>
     <input type="file" id="fileInput" accept="application/pdf">
-    <div id="pageCounter">Página 1 de 0</div>
     <div id="pdfViewerContainer">
+        <div id="pageCounter">Página 1 de 0</div>
         <div id="pdfViewer" class="pdf-viewer"></div>
     </div>
 

@@ -62,22 +62,47 @@ const loginBtn = document.getElementById("login-btn");
 const loginModal = document.getElementById("login-acc");
 const closeModal = document.getElementById("closeModal");
 
+const btnRegister = document.getElementById("btn-register");
+const btnCloseLogin = document.getElementById("btn-close-login");
+const btnCloseRegister = document.getElementById("btn-close-register");
+const containerRegister = document.getElementById("container-register");
+const containerLogin = document.getElementById("container-login");
+const loginAcc = document.getElementById("login-acc");
+
+
+// Abrir el modal cuando se hace clic en el botón de registro
+btnRegister.addEventListener("click", (event) => {
+  event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+  containerLogin.style.display = "none";
+  containerRegister.style.display = "flex";
+  document.body.style.overflow = 'hidden';
+});
+
 // Abrir el modal cuando se hace clic en el ícono de usuario
 loginBtn.addEventListener("click", (event) => {
   event.preventDefault(); // Evita el comportamiento predeterminado del enlace
   loginModal.style.display = "flex";
+  containerLogin.style.display = "block";
+  document.body.style.overflow = 'hidden';
 });
 
 // Cerrar el modal cuando se hace clic en la 'X'
 closeModal.addEventListener("click", () => {
-  loginModal.style.display = "none";
+  containerLogin.style.display = "none";
+  containerRegister.style.display = "block";
 });
 
 // Cerrar el modal si se hace clic fuera del contenido
-window.addEventListener("click", (event) => {
-  if (event.target == loginModal) {
-    loginModal.style.display = "none";
-  }
+btnCloseLogin.addEventListener("click", () => {
+    loginAcc.style.display = "none";
+    containerLogin.style.display = "none";
+    document.body.style.overflow = 'auto';
+});
+
+btnCloseRegister.addEventListener("click", () => {
+    loginAcc.style.display = "none";
+    containerRegister.style.display = "none";
+    document.body.style.overflow = 'auto';
 });
 
 

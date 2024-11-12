@@ -33,7 +33,7 @@ body {
     font-family: "Jura", sans-serif;
     /* background-color: #d894ff; */
     color: #fff;
-    background-color: var(--last-color); 
+    background-color: var(--whitelast-color); 
     margin: auto;
     /* background: linear-gradient(90deg, var(--primary-color) 66%, #ffffff 100%),
     url("/img/Background/patron-bg-v03.png"); */
@@ -468,17 +468,7 @@ input {
     height: auto;
     width: 100%;
     background-color: var(--last-color);
-    /* margin: 7rem 0; */
-
-
-    /* & img:first-child {
-      z-index: 1;
-
-      top: 0;
-      left: 0;
-      position: absolute;
-      object-fit: contain;
-    } */
+    display: none;
 
         & .container-books {
             position: relative;
@@ -814,6 +804,7 @@ p {
     background-repeat: no-repeat;
     margin: 0 auto;
     padding: 1rem;
+    display: none;
 
     & .filter {
       position: absolute;
@@ -1207,11 +1198,12 @@ body.o {
   & .descrip-starbooks {
     position: absolute;
     height: 150px;
+    width: 100%;
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    width: 100%;
+    padding: .3rem;
 
     & h2 {
       font-size: 2.5rem;
@@ -1234,6 +1226,9 @@ body.o {
     color: rgba(255, 255, 255, 0.514);
     text-align: center;
     padding: 0 .2rem;
+    background-color: rgba(41, 41, 41, 0.075);
+    opacity: 0.9;
+    backdrop-filter: blur(10px);
 
     & span {
       color: var(--white);
@@ -1242,9 +1237,7 @@ body.o {
   }
 }
 
-
-
-.circle {
+/* .circle {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -1261,9 +1254,203 @@ body.o {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.3rem;
+  }
+} */
 
+
+
+.circle{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5rem;
+  overflow: hidden;
+  height: 7.5rem;
+  text-align: center;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 50%;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ff3bf9 10%, #fe53bb 45%, #bebebe 67%, #2d2d2d 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  &::after {
+    content: var(--circle-text,"Descubrir!");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
   }
 }
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  /* backdrop-filter: blur(1rem); */
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: "Avalors Personal Use";
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle-02 {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle-02:nth-of-type(1) {
+  background: var(--last-color);
+}
+
+.circle-02:nth-of-type(2) {
+  background: var(--black);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .circle.expand {
   transform: scale(25) rotate(720deg);
@@ -1271,7 +1458,7 @@ body.o {
 
 .content {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
@@ -1282,10 +1469,6 @@ body.o {
   & p:first-child {
     padding: 1rem;
   }
-
-  & span {
-    font-size: 3rem;
-  }
 }
 
 .content.visible {
@@ -1295,7 +1478,8 @@ body.o {
 
 .container-star-book {
   position: relative;
-  max-width: 450px;
+  width: 350px;
+  max-width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1308,6 +1492,12 @@ body.o {
   display: none;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+
+  & img {
+    height: auto;
+    width: 60%;
+    object-fit: cover;
+  }
 }
 
 .image.active {
@@ -1518,12 +1708,16 @@ body.o {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--last-color);
-  border-radius: 15px;
+  background-color: rgba(31, 31, 31, 0.158);
+  background-image: url(/public/img/Dark-Gradient-01.png);
+  background-blend-mode: screen;
+  background-size: cover;
+  background-position: 750% 100%;
+  border-radius: 5px;
   text-align: center;
   text-shadow: 0 0 7px #000000;
   margin: auto;
-  padding: 3rem 2rem 0 2rem;
+  padding: 2rem;
 
   & img {
     position: absolute;
@@ -1542,20 +1736,18 @@ body.o {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 3rem;
-    padding: 1rem;
+    padding: 3rem;
 
     & .item-about {
       height: 280px;
       width: 280px;
       padding: 1rem;
       border-radius: 5px;
-
-      &:hover {
-        box-shadow: 0 0 3px #505050;
-      }
+      backdrop-filter: blur(50px);
+      box-shadow: 0 0 14px #00000027;
     }
 
     & svg {
@@ -1998,10 +2190,5 @@ footer {
     
       }
     }
-}
-
-  #our-team {
-    height: auto;
-    width: 95%;
   }
 }

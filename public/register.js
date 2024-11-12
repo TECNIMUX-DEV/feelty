@@ -5,8 +5,8 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     const username = document.getElementById('registerUsername').value;
     const password = document.getElementById('registerPassword').value;
   
-    // console.log('Username:', username); // <-- Verifica los valores ingresados
-    // console.log('Password:', password);
+    console.log('Username:', username); // <-- Verifica los valores ingresados
+    console.log('Password:', password);
   
     try {
       const response = await fetch('/api/register', {
@@ -25,4 +25,3 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
       console.error('Error:', error);
     }
   });
-  

@@ -195,7 +195,7 @@
 </div>
 
 <section id="starbooks">
-    <h2>Starbooks</h2>
+    <!-- <h2>Starbooks</h2>
     <p>Libros tendencia que están transformando</p>
     <div class="tags"><p>Suspenso</p><p>Drama</p><p>Fantasia</p></div>
 
@@ -223,7 +223,56 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
+
+
+
+
+        <div class="container-star-books">
+            <video src="/public/videos/3785221-hd_1920_1080_25fps.mp4" autoplay muted loop></video>
+            <div class="descrip-starbooks">
+                <h2>Starbooks</h2>
+                <p><em>Descubre las lecturas más relevantes que están marcando tendencias y transformando mentes</em></p>
+            </div>
+            <div class="circle" onclick="expand()"></div>
+            <div class="content">
+                <p>Estos son los tres libros más leidos de la semana.</p>
+                <div class="container-star-book">
+                    <div class="image active" id="image-0">
+                        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/83/4f83ccdd48c8171e335531d12f58a52d.jpg" alt="book-1" />
+                        <p class="description">Un emocionante libro de suspenso que mantiene al lector al borde del asiento.</p>
+                    </div>
+                    <div class="image" id="image-1">
+                        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/83/4f83ccdd48c8171e335531d12f58a52d.jpg" alt="book-2" />
+                        <p class="description">Un relato dramático que explora las complejidades de la emoción humana.</p>
+                    </div>
+                    <div class="image" id="image-2">
+                        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/83/4f83ccdd48c8171e335531d12f58a52d.jpg" alt="book-3" />
+                        <p class="description">Una aventura fantástica que transporta al lector a mundos imaginarios.</p>
+                    </div>
+    
+                    <div class="nav-buttons">
+                        <button class="nav-button" onclick="navigate(-1)">&#8592;</button>
+                        <button class="nav-button" onclick="navigate(1)">&#8594;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="acronimo">
+                <p><span>F</span>ascinantes <span>E</span>xperiencias <span>E</span>mpoderadoras que llevan tus <span>L</span>ímites más allá, <span>T</span>ransformante, y siendo <span>Y</span>o.</p>
+            </div>
+        </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
 </section>
 
 <section id="books">
@@ -661,9 +710,8 @@
       <a href="/"><img src="/public/favicon/bookmarks.svg" 
         alt="logo"></a>
 </footer>
-
-<script src="script.js"></script>
 <script src="register.js"></script>
 <script src="login.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

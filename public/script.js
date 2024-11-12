@@ -120,3 +120,61 @@ btnCloseNewsletter.addEventListener("click", () => {
   containerNewsletter.style.display = "none";
   document.body.style.overflow = 'auto';
 })
+
+
+
+// Open Starbooks
+let currentImageIndex = 0;
+    
+function expand() {
+  const descripStarbooks = document.querySelector('.descrip-starbooks');
+  const circle = document.querySelector('.circle');
+  const content = document.querySelector('.content');
+  const containerStarBook = document.querySelector('.container-star-book');
+
+  // Cambiar el texto en el ::after de la esfera
+  circle.style.setProperty('--circle-text', '"¡BOOM!"');
+
+  setTimeout(() => {
+    circle.style.opacity = .3;
+  }, 1500);
+  descripStarbooks.style.display = 'none';
+
+  // Expande la esfera y muestra el contenido
+  content.classList.add('visible');
+  setTimeout(() => {
+      circle.classList.add('expand'); // Expande la esfera
+  }, 100);
+
+  setTimeout(() => {
+      containerStarBook.style.opacity = 1;
+  }, 2000);
+
+  setTimeout(() => {
+      circle.style.zIndex = 0;
+  }, 2000);
+}
+
+
+function showDescription(index) {
+    const images = document.querySelectorAll('.image');
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+    });
+
+    images[index].classList.add('active');
+}
+
+function navigate(direction) {
+    const images = document.querySelectorAll('.image');
+    const totalImages = images.length;
+
+    // Remove active class from the current image
+    images[currentImageIndex].classList.remove('active');
+
+    // Update current image index based on direction
+    currentImageIndex = (currentImageIndex + direction + totalImages) % totalImages;
+
+    // Add active class to the new image
+    images[currentImageIndex].classList.add('active');
+}

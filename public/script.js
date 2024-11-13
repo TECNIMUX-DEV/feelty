@@ -38,22 +38,6 @@ btnMenu.addEventListener('click', () => {
   toggleStateMenu =! toggleStateMenu;
 })
 
-// Style books
-const itemBooks = $$$('.item-book');
-const books = $$('books');
-itemBooks.forEach(book => {
-  book.addEventListener('click', () => {
-    book.style.scale = '1.3';
-  })
-
-  books.addEventListener('dblclick', () => {
-    itemBooks.forEach(book => {
-      book.style.scale = '1';
-    })
-  })
-})
-
-
 });
 
 

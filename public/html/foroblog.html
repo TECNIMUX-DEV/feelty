@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feelty ­· ForoBlog</title>
-    <link rel="stylesheet" href="/css/foroblog.css">
-    <link rel="icon" type="img/svg+xml" href="/favicon/clover.svg">
+    <link rel="stylesheet" href="/public/css/foroblog.css">
+    <link rel="icon" type="img/svg+xml" href="/public/favicon/pet.svg">
 </head>
 <body>
     <header>
+        <h1>ForoBlog Feelty</h1>
+        <input type="search" placeholder="Buscar un libro">
 
-        <input type="text" placeholder="Buscar un libro">
     </header>
+    <nav>
+        <a href="#books">
+            <div class="item-nav" title="Mis libros">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  
+                stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-library"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 3m0 2.667a2.667 
+                2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 7.26a2.005 
+                2.005 0 0 0 -1.012 1.737v10c0 1.1 .9 2 2 2h10c.75 0 1.158 -.385 1.5 -1" /><path d="M11 7h5" /><path d="M11 10h6" /><path d="M11 13h3" /></svg>
+            </div>
+        </a>
+    </nav>
 
-    <div id="categories">
+    <!-- <div id="categories">
         <ul><h2>Libros X Genero</h2>
             <li>Elemento 1</li>
             <li>Elemento 2</li>
@@ -52,12 +63,249 @@
         </ul>
         
     </div>
-    <div id="landing-page">
-        <h1>ForoBlog Feelty</h1>
-    </div>
     <main>
         
-    </main>
+    </main> -->
+
+
+
+
+
+
+
+<!-- Botón para abrir/cerrar el menú de categorías -->
+<button id="toggle-menu" onclick="toggleMenu()">☰ Categorías</button>
+
+<!-- Menú de categorías lateral -->
+<div id="sidebar">
+    <!-- Libros X Género -->
+    <ul id="genre-list">
+        <h2>Libros X Género</h2>
+        <li>Ficción - La Odisea del Espacio</li>
+        <li>Fantasía - La Torre Oscura</li>
+        <li>Aventura - Moby Dick</li>
+        <li>Romance - Orgullo y Prejuicio</li>
+        <li>Ciencia Ficción - Duna</li>
+        <li>Terror - Drácula</li>
+        <li>Historia - Sapiens</li>
+        <li>Psicología - Pensar Rápido, Pensar Despacio</li>
+    </ul>
     
+    <!-- Más Comentados -->
+    <ul id="most-commented-list">
+        <h2>Más Comentados</h2>
+        <li>El Principito</li>
+        <li>1984</li>
+        <li>Un Mundo Feliz</li>
+        <li>Los Miserables</li>
+        <li>Orgullo y Prejuicio</li>
+        <li>Cien Años de Soledad</li>
+        <li>Rayuela</li>
+        <li>El Amor en los Tiempos del Cólera</li>
+    </ul>
+    
+    <!-- Recomendados -->
+    <ul id="recommended-list">
+        <h2>Recomendados</h2>
+        <li>Cómo Ganar Amigos e Influir Sobre las Personas</li>
+        <li>Los Secretos de la Mente Millonaria</li>
+        <li>Hábitos Atómicos</li>
+        <li>Padre Rico Padre Pobre</li>
+        <li>El Hombre en Busca de Sentido</li>
+        <li>La Magia del Orden</li>
+        <li>Los Cuatro Acuerdos</li>
+        <li>El Poder del Ahora</li>
+    </ul>
+</div>
+
+<section id="books">
+    <div class="container-books">
+        <h2>Todos mis libros</h2>
+        <h4>Estos son los libros que agregaste a tu libreria</h4>
+        <p>Puedes fijarlos, sequir leyendolos, borrarlos, compartirlos con tus amigos o descargarlos en tu dispositivo.</p>
+        <div class="item-book">
+            <div class="action-nav">
+                <div class="blog">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  
+                    stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-share-3"><path stroke="none" d="M0 0h24v24H0z" 
+                    fill="none"/><path d="M13 4v4c-6.575 1.028 -9.02 6.788 -10 12c-.037 .206 5.384 -5.962 10 -6v4l8 -7l-8 -7z" /></svg>
+                </div>
+                <div>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-pinned">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 3a1 1 0 0 1 .117 1.993l-.117 
+                    .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 
+                    1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 
+                    -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
+                    stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-book-2"><path stroke="none" d="M0 0h24v24H0z"
+                    fill="none"/><path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" />
+                    <path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-backspace">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 5a2 2 0 0 1 1.995 1.85l.005 
+                    .15v10a2 2 0 0 1 -1.85 1.995l-.15 .005h-11a1 1 0 0 1 -.608 -.206l-.1 -.087l-5.037 -5.04c-.809 
+                    -.904 -.847 -2.25 -.083 -3.23l.12 -.144l5 -5a1 1 0 0 1 .577 -.284l.131 -.009h11zm-7.489 4.14a1 
+                    1 0 0 0 -1.301 1.473l.083 .094l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.403 1.403l.094 
+                    -.083l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.403 -1.403l-.083 -.094l-1.292 -1.293l1.292 
+                    -1.293l.083 -.094a1 1 0 0 0 -1.403 -1.403l-.094 .083l-1.293 1.292l-1.293 -1.292l-.094 -.083l-.102 
+                    -.07z" /></svg>
+                </div>
+            </div>
+            
+                <div class="caratula">
+                <img src="/public/img/Caratulas-libros/CARATULA-PRINCIPITO-FINAL-SEGUNA-EDICION-CURVAS.jpg" 
+                alt="book-1">
+                </div>
+                <h2>El Principito</h2>
+                <h4>Calificacion: 4.5/5</h4>
+                <h4>Duracion: 120 minutos</h4>
+                <p>El libro del principito es un libro que se lee cuando se tiene que hacer algo que no se puede hacer en la vida normal. Es un libro que nos enseña a hacer cosas que no se pueden hacer en la vida normal.</p>
+                <p>Seguir leyendo...</p>
+                <h5><span class="completo">Completado</span></h5>
+                <!-- <a href="https://www.amazon.com/El-libro-vida-libro-normal/dp/8493573457" target="_blank"><button>Leer</button></a>
+                <a href="#buy-books"><button>Comprar</button></a> -->
+        </div>
+        <div class="item-book">
+            <div class="action-nav">
+                <div class="blog">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  
+                    stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-share-3"><path stroke="none" d="M0 0h24v24H0z" 
+                    fill="none"/><path d="M13 4v4c-6.575 1.028 -9.02 6.788 -10 12c-.037 .206 5.384 -5.962 10 -6v4l8 -7l-8 -7z" /></svg>
+                </div>
+                <div>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-pinned">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 3a1 1 0 0 1 .117 1.993l-.117 
+                    .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 
+                    1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 
+                    -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
+                    stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-book-2"><path stroke="none" d="M0 0h24v24H0z"
+                    fill="none"/><path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" />
+                    <path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-backspace">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 5a2 2 0 0 1 1.995 1.85l.005 
+                    .15v10a2 2 0 0 1 -1.85 1.995l-.15 .005h-11a1 1 0 0 1 -.608 -.206l-.1 -.087l-5.037 -5.04c-.809 
+                    -.904 -.847 -2.25 -.083 -3.23l.12 -.144l5 -5a1 1 0 0 1 .577 -.284l.131 -.009h11zm-7.489 4.14a1 
+                    1 0 0 0 -1.301 1.473l.083 .094l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.403 1.403l.094 
+                    -.083l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.403 -1.403l-.083 -.094l-1.292 -1.293l1.292 
+                    -1.293l.083 -.094a1 1 0 0 0 -1.403 -1.403l-.094 .083l-1.293 1.292l-1.293 -1.292l-.094 -.083l-.102 
+                    -.07z" /></svg>
+                </div>
+            </div>
+            
+                <div class="caratula">
+                <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/a2/8c/a28c74c0fdb8c85fe576fac52491e119.jpg" 
+                alt="book-1">
+                </div>
+                <h2>Cien Años de Soledad</h2>
+                <h4>Calificacion: 5/5</h4>
+                <h4>Duracion: 720 minutos</h4>
+                <p>Gabriel García Márquez es un escritor mexicano que se convirtió en el autor de la novela de amor, Cien Años de Soledad, en 1988. Esta novela se centra en la vida de un joven llamado Gabriel García, que vive en un mundo de fantasía y misterio.</p>
+                <p>Seguir leyendo...</p>
+                <h5><span class="en-progreso">En progreso</span></h5>
+                <!-- <a href="https://www.amazon.com/El-libro-vida-libro-normal/dp/8493573457" target="_blank"><button>Leer</button></a>
+                <a href="#buy-books"><button>Comprar</button></a> -->
+        </div>
+        <div class="item-book">
+            <div class="action-nav">
+                <div class="blog">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  
+                    stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-share-3"><path stroke="none" d="M0 0h24v24H0z" 
+                    fill="none"/><path d="M13 4v4c-6.575 1.028 -9.02 6.788 -10 12c-.037 .206 5.384 -5.962 10 -6v4l8 -7l-8 -7z" /></svg>
+                </div>
+                <div>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-pinned">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 3a1 1 0 0 1 .117 1.993l-.117 
+                    .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 
+                    1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 
+                    -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
+                    stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-book-2"><path stroke="none" d="M0 0h24v24H0z"
+                    fill="none"/><path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" />
+                    <path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-backspace">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 5a2 2 0 0 1 1.995 1.85l.005 
+                    .15v10a2 2 0 0 1 -1.85 1.995l-.15 .005h-11a1 1 0 0 1 -.608 -.206l-.1 -.087l-5.037 -5.04c-.809 
+                    -.904 -.847 -2.25 -.083 -3.23l.12 -.144l5 -5a1 1 0 0 1 .577 -.284l.131 -.009h11zm-7.489 4.14a1 
+                    1 0 0 0 -1.301 1.473l.083 .094l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.403 1.403l.094 
+                    -.083l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.403 -1.403l-.083 -.094l-1.292 -1.293l1.292 
+                    -1.293l.083 -.094a1 1 0 0 0 -1.403 -1.403l-.094 .083l-1.293 1.292l-1.293 -1.292l-.094 -.083l-.102 
+                    -.07z" /></svg>
+                </div>
+            </div>
+            
+                <div class="caratula">
+                <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/83/4f83ccdd48c8171e335531d12f58a52d.jpg" 
+                alt="book-1">
+                </div>
+                <h2>Satanás</h2>
+                <h4>Calificacion: 4.2/5</h4>
+                <h4>Duracion: 120 minutos</h4>
+                <p>El libro del principito es un libro que se lee cuando se tiene que hacer algo que no se puede hacer en la vida normal. Es un libro que nos enseña a hacer cosas que no se pueden hacer en la vida normal.</p>
+                <p>Seguir leyendo...</p>
+                <h5><span class="pendiente">Pendiente</span></h5>
+                <!-- <a href="https://www.amazon.com/El-libro-vida-libro-normal/dp/8493573457" target="_blank"><button>Leer</button></a>
+                <a href="#buy-books"><button>Comprar</button></a> -->
+        </div>
+        <div class="item-book">
+            <div class="action-nav">
+                <div class="blog">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  
+                    stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-share-3"><path stroke="none" d="M0 0h24v24H0z" 
+                    fill="none"/><path d="M13 4v4c-6.575 1.028 -9.02 6.788 -10 12c-.037 .206 5.384 -5.962 10 -6v4l8 -7l-8 -7z" /></svg>
+                </div>
+                <div>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-pinned">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 3a1 1 0 0 1 .117 1.993l-.117 
+                    .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 
+                    1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 
+                    -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
+                    stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-book-2"><path stroke="none" d="M0 0h24v24H0z"
+                    fill="none"/><path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" />
+                    <path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" /></svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                    fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-backspace">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 5a2 2 0 0 1 1.995 1.85l.005 
+                    .15v10a2 2 0 0 1 -1.85 1.995l-.15 .005h-11a1 1 0 0 1 -.608 -.206l-.1 -.087l-5.037 -5.04c-.809 
+                    -.904 -.847 -2.25 -.083 -3.23l.12 -.144l5 -5a1 1 0 0 1 .577 -.284l.131 -.009h11zm-7.489 4.14a1 
+                    1 0 0 0 -1.301 1.473l.083 .094l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.403 1.403l.094 
+                    -.083l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.403 -1.403l-.083 -.094l-1.292 -1.293l1.292 
+                    -1.293l.083 -.094a1 1 0 0 0 -1.403 -1.403l-.094 .083l-1.293 1.292l-1.293 -1.292l-.094 -.083l-.102 
+                    -.07z" /></svg>
+                </div>
+            </div>
+            
+                <div class="caratula">
+                <img src="/public/img/Caratulas-libros/fb2b2364b36a59aa300eaab6d377cf94.png" 
+                alt="book-1">
+                </div>
+                <h2>El Gato Negro</h2>
+                <h4>Calificacion: 4/5</h4>
+                <h4>Duracion: 120 minutos</h4>
+                <p>El libro del principito es un libro que se lee cuando se tiene que hacer algo que no se puede hacer en la vida normal. Es un libro que nos enseña a hacer cosas que no se pueden hacer en la vida normal.</p>
+                <p>Seguir leyendo...</p>
+                <h5><span class="en-progreso">En progreso</span></h5>
+                <!-- <a href="https://www.amazon.com/El-libro-vida-libro-normal/dp/8493573457" target="_blank"><button>Leer</button></a>
+                <a href="#buy-books"><button>Comprar</button></a> -->
+        </div>
+        <div class="item-book" id="add-book">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-crosshair"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8v-2a2 2 0 0 1 2 -2h2" /><path d="M4 16v2a2 2 0 0 0 2 2h2" /><path d="M16 4h2a2 2 0 0 1 2 2v2" /><path d="M16 20h2a2 2 0 0 0 2 -2v-2" /><path d="M9 12l6 0" /><path d="M12 9l0 6" /></svg>
+            <h2>Añadir</br> libro</h2>
+            <p>Añade el proximo Starbook!</p>
+        </div>
+    </div>
+</section>
+<script src="/public/JS/foroBlog.js"></script>
 </body>
 </html>

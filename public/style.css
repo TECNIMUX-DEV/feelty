@@ -520,6 +520,10 @@ input {
           font-size: 2.4rem;
           text-shadow: 0 0 15px #000;
         }
+
+        & a {
+          text-decoration: none;
+        }
       }
       
       .stories button {
@@ -674,7 +678,7 @@ header {
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: .4rem;
+    gap: 1.5rem;
     list-style: none;
     padding: 1rem;
     overflow: hidden;
@@ -693,17 +697,8 @@ header {
       /* box-shadow: 5px 5px 5px #ffffff27, 5px 5px 5px #83036727, 5px 5px 5px  #b6015bb9, 5px  5px 5px #d894ff; */
       backdrop-filter: blur(10px);
       border-radius: 7px; 
-      /* animation: xplorer 1s  ease infinite alternate; */
-
-      & img {
-        display: none;
-      }
-
-      &::after {
-        content: "";
-        display: none;
-      }
-    }
+      padding: .3rem .4rem;
+  }
 
 .margin-zero {
   margin: 0;
@@ -713,37 +708,9 @@ header {
       position: relative;
       font-size: 1rem;
       font-weight: 800;
-      padding: .3rem;
       color: #c7c7c7; 
       text-shadow: 0 0 10px #0000;
-      margin: 1rem;
       text-decoration: none;
-
-      & img {
-        position: absolute;
-        top: -30px;
-        right: -53px;
-        height: 100px;
-        transform: rotate(-5deg);
-        margin: -1rem;
-        opacity: 0.1;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 30px;
-        right: -60px;
-        height: 100%;
-        width: 190px;
-        background-image: url(/img/line.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        transform: rotate(65.5deg);
-        opacity: 0.1;
-        margin: -1rem;
-      }
 
       &:hover {
         opacity: 0.9;

@@ -1110,6 +1110,7 @@ body.o {
 
 .circle.expand {
   transform: scale(25) rotate(720deg);
+  cursor: default;
 }
 
 .content {

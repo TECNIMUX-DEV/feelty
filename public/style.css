@@ -118,8 +118,6 @@ body {
   z-index: 30;
 }
 
-
-
 .rainbow {
     /* background: linear-gradient(90deg, 
     rgba(255, 0, 0, 0.6), 
@@ -1095,18 +1093,6 @@ body.o {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .circle.expand {
   transform: scale(25) rotate(720deg);
